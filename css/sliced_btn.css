@@ -1,0 +1,48 @@
+.wrapper{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  
+  .wrapper{
+    display: block;
+    width: 200px;
+    height: 40px;
+    line-height: 40px;
+    font-size: 20px;
+    font-family: 'Minecraft';
+    text-decoration: none;
+    color: #333;
+    border: 4px solid #333;
+    letter-spacing: 1px;
+    text-align: center;
+    position: relative;
+    transition: all .75s;
+  }
+  
+  .wrapper span{
+    position: relative;
+    z-index: 2;
+  }
+  
+  .wrapper:after{
+    position: absolute;
+    content: "";
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background: #D48B9C;
+    transition: all .75s;
+  }
+  
+  .wrapper:hover{
+    color: #fff;
+    letter-spacing: 3px;
+  }
+  
+  .wrapper:hover:after{
+    width: 100%;
+  }
+  
