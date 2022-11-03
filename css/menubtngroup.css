@@ -1,6 +1,7 @@
 .btn-group {
   display: inline-flex;
   position: relative;
+  margin-bottom: 25px;
 }
 .btn-group:before {
   display: block;
