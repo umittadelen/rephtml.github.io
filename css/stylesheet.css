@@ -15,3 +15,10 @@ a,p,div {
     -o-user-select: none;
     user-select: none;
 }
+
+footer {
+    position: fixed;
+    left: 0px;
+    bottom: 50px;
+    width: 100%;
+}
