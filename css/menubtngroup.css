@@ -1,32 +1,67 @@
-  .menubtngroup{
-    position: relative;
-    display: block;
-    color: white;
-    font-size: 14px;
-    font-family: "Minecraft";
-    text-decoration: none;
-    margin: 30px 0;
-    border: 2px solid #ff7675;
-    padding: 14px 60px;
-    text-transform: uppercase;
-    overflow: hidden;
-    transition: 1s all ease;
-  }
-  .menubtngroup::before{
-    background: #ff7675;
-    content: "";
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%,-50%);
-    z-index: -1;
-    transition: all 0.6s ease;
-  }
-  
-  .menubtngroup::before{
-    width: 100%;
-    height: 0%;
-  }
-  .menubtngroup:hover::before{
-    height: 100%;
-  }
+.btn-group {
+  display: inline-flex;
+  position: relative;
+}
+.btn-group:before {
+  display: block;
+  content: "";
+  position: absolute;
+  top: 12px;
+  right: 0;
+  bottom: -12px;
+  left: 0;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.5);
+}
+.btn-group button {
+  color: #000;
+  font-weight: bold;
+  border: 0;
+  border-bottom: 1px solid #000;
+  outline: none;
+  position: relative;
+  top: 0;
+  padding: 12px 16px;
+  margin: 0 -1px 0 -1px;
+  z-index: 10;
+  transition: top 140ms linear;
+}
+.btn-group button:first-child {
+  border-radius: 8px 0 0 8px;
+  margin: 0;
+}
+.btn-group button:last-child {
+  border-radius: 0 8px 8px 0;
+  margin: 0;
+}
+.btn-group button:before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 1px;
+  right: 1px;
+  bottom: -12px;
+  z-index: 5;
+  cursor: pointer;
+  box-shadow: 0 0 0 1px #000;
+  transition: bottom 140ms linear;
+}
+.btn-group button:first-child:before {
+  border-radius: 8px 0 0 8px;
+}
+.btn-group button:last-child:before {
+  border-radius: 0 8px 8px 0;
+}
+.btn-group button:hover {
+  top: 4px;
+}
+.btn-group button:hover:before {
+  bottom: -8px;
+}
+.btn-group button:active {
+  top: 12px;
+}
+.btn-group button:active:before {
+  bottom: 0px;
+}
