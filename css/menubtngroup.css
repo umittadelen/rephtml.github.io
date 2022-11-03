@@ -1,24 +1,38 @@
-.menubtngroup button {
-    background-color: #04AA6D; /* Green background */
-    border: 1px solid green; /* Green border */
-    color: white; /* White text */
-    padding: 10px 24px; /* Some padding */
-    cursor: pointer; /* Pointer/hand icon */
-    float: left; /* Float the buttons side by side */
+  .menubtngroup.middle{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
   }
-  
-  .menubtngroup button:not(:last-child) {
-    border-right: none; /* Prevent double borders */
+  .menubtngroup.btn{
+    position: relative;
+    display: block;
+    color: white;
+    font-size: 14px;
+    font-family: "Minecraft";
+    text-decoration: none;
+    margin: 30px 0;
+    border: 2px solid #ff7675;
+    padding: 14px 60px;
+    text-transform: uppercase;
+    overflow: hidden;
+    transition: 1s all ease;
   }
-  
-  /* Clear floats (clearfix hack) */
-  .menubtngroup:after {
+  .menubtngroup.btn::before{
+    background: #ff7675;
     content: "";
-    clear: both;
-    display: table;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    z-index: -1;
+    transition: all 0.6s ease;
   }
   
-  /* Add a background color on hover */
-  .menubtngroup button:hover {
-    background-color: #3e8e41;
+  .menubtngroup.btn2::before{
+    width: 100%;
+    height: 0%;
+  }
+  .menubtngroup.btn2:hover::before{
+    height: 100%;
   }
