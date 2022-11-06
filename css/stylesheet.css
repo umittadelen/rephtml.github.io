@@ -13,7 +13,7 @@
     font-display: swap;
 }
 
-a,p,div {
+a,p,div,h1 {
     -webkit-user-select: none;
     -khtml-user-select: none;
     -moz-user-select: none;
@@ -24,6 +24,7 @@ a,p,div {
     -moz-user-drag: none;
     -o-user-drag: none;
     user-select: none;
+    font-weight: 1.5vw;
     
 }
 

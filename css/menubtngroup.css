@@ -15,6 +15,7 @@
   background: rgba(255, 255, 255, 0.5);
 }
 .btn-group button {
+  font-family: "Minecraft";
   color: #000;
   font-weight: bold;
   border: 0;
