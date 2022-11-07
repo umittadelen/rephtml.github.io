@@ -1,6 +1,6 @@
 button.print-button {
-    width: 75px;
-    height: 75px;
+    width: 70px;
+    height: 70px;
   }
   span.print-icon, span.print-icon::before, span.print-icon::after, button.print-button:hover .print-icon::after {
     border: solid 4px #333;
