@@ -15,6 +15,20 @@
     }
 </style>
 
+<SCRIPT language=JavaScript>
+    document.addEventListener("keydown", function (event){
+    if (event.ctrlKey){
+       event.preventDefault();
+    }
+    if(event.keyCode == 123){
+       event.preventDefault();
+    }
+    });
+    document.addEventListener('contextmenu', 
+     event => event.preventDefault()
+    );
+</SCRIPT>
+
 <html lang="tr">
     <head>
         <script src="https://kit.fontawesome.com/26a2eb1317.js" crossorigin="anonymous"></script>
