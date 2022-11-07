@@ -1,5 +1,4 @@
 if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
-    getElementById('body').style.display = 'none';
     window.alert("your browser not supported this website")
 }
 function to_p1() {
