@@ -1,6 +1,10 @@
 const wrapper = document.querySelector('.infinite')
 const neck = document.querySelector('.neck')
 
+document.querySelector('.info').addEventListener('click', () => {
+    window.print()
+})
+
 const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
         if(entry.intersectionRatio > 0){
