@@ -1,0 +1,22 @@
+/* 
+    # --> ID
+    . --> STYLE 
+*/
+
+@font-face {
+    font-family: 'Minecraft';
+    src: local('Minecraft Regular'), local('Minecraft-Regular'),
+        url('../fonts/Minecraft-Regular.woff2') format('woff2'),
+        url('../fonts/Minecraft-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+video {
+    width:100vw;
+    height:100vh;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+}
