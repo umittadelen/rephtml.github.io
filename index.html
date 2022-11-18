@@ -142,7 +142,7 @@
                     
             </article>
             <aside style= "float: right;">
-                <img src="favicon.ico">
+                <img src="favicon.ico" draggable="false">
             </aside>
             
         </div>
@@ -159,6 +159,27 @@
         <div id = "div5" style="display:none">
             <article>
                 <p class="container">this page is under developmet</p>
+                <p></p>
+                <p class="container" id="info1"></p>
+                <script>
+                    let userAgent = navigator.userAgent;
+                    let browserName;
+         
+                    if(userAgent.match(/chrome|chromium|crios/i)){
+                        browserName = "Chrome";
+                    } else if(userAgent.match(/firefox|fxios/i)){
+                        browserName = "Firefox";
+                    } else if(userAgent.match(/safari/i)){
+                        browserName = "Safari";
+                    } else if(userAgent.match(/opr\//i)){
+                        browserName = "Opera";
+                    } else if(userAgent.match(/edg/i)){
+                        browserName = "Edge";
+                    } else{
+                        browserName="No browser detection";
+                    }
+                    document.getElementById("info1").innerHTML = "your browser is: " + browserName;
+                </script>
             </article>
             <footer>
                 <div class="btn1" onclick="window.location.href='html/rr.html';">

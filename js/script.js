@@ -1,6 +1,8 @@
 if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
-    window.alert("your browser not supported this website")
+    window.alert("This web page may not work properly on your device, but you can still open it.")
 }
+
+
 function to_p1() {
     document.getElementById("div1").style.display="block";
     document.getElementById("div2").style.display="none";
