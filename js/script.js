@@ -2,6 +2,9 @@ if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(naviga
     window.alert("This web page may not work properly on your device, but you can still open it.")
 }
 
+function cls(){
+    window.close();
+}
 
 function to_p1() {
     document.getElementById("div1").style.display="block";
