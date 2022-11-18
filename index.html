@@ -17,16 +17,13 @@
 
 <SCRIPT language=JavaScript>
     document.addEventListener("keydown", function (event){
-    if (event.ctrlKey){
-       event.preventDefault();
-    }
-    if(event.keyCode == 123){
-       event.preventDefault();
-    }
+        if (event.ctrlKey){
+            event.preventDefault();
+        }
+        if(event.keyCode == 123){
+            event.preventDefault();
+        }
     });
-    document.addEventListener('contextmenu', 
-     event => event.preventDefault()
-    );
 </SCRIPT>
 
 <html lang="tr">
@@ -39,7 +36,9 @@
         <link href="css/menubtngroup.css" rel="stylesheet"/>
         <link href="css/slider.css" rel="stylesheet"/>
         <link href="css/print_button.css" rel="stylesheet"/>
+        <link href="css/rightclick.css" rel="stylesheet"/>
         <script type="text/javascript" src="js/script.js"></script>
+        
         
     </head>
     <body style="background:rgb(139, 212, 195);" >
@@ -168,7 +167,20 @@
                 <div class="btn1" onclick="window.location.href='html/leson.html';">
                     <a><span>lesson</span></a>
                 </div>
+                <div class="btn1" onclick="window.location.href='html/video.html';">
+                    <a><span>video</span></a>
+                </div>
             </footer>
         </div>
+
+        <div id="context-menu">
+            <div class="item" onclick = "to_p1()">Option 1</div>
+            <div class="item" onclick = "to_p2()">Option 2</div>
+            <div class="item" onclick = "to_p3()">Option 3</div>
+            <div class="item" onclick = "to_p4()">Option 4</div>
+            <div class="item" onclick = "to_p5()">Option 5</div>
+            <script type="text/javascript" src="js/rightclick.js"></script>
+        </div>
+        
     </body>
 </html>

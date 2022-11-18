@@ -16,6 +16,7 @@
   text-align: center;
   position: relative;
   transition: all .75s;
+  margin: 3px;
 }
   
 .btn1 span{
