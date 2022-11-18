@@ -62,3 +62,8 @@ scope.addEventListener("click", (e) => {
     }
 });
 
+function closeWindow() {
+    if (confirm('Are you sure you want to close the page?')) {
+        window.close();
+    }
+}
