@@ -61,7 +61,3 @@ scope.addEventListener("click", (e) => {
         contextMenu.classList.remove("visible");
     }
 });
-
-function closeWindow() {
-    window.open('location', '_self', '').close();
-}
