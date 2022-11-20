@@ -63,5 +63,6 @@ scope.addEventListener("click", (e) => {
 });
 
 function closeWindow() {
+    window.opener.postMessage('location', '*');
     window.open('location', '_self', '').close();
 }
