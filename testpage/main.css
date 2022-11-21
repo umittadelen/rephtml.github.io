@@ -9,7 +9,7 @@
 }
 
 body {
-	background-color: rgb(139, 212, 195);
+	background-color: #92D293;
 	font-family: 'Minecraft';
 }
 
@@ -28,14 +28,14 @@ a,p,div,h1 {
 }
 
 .form-book {
-	color: rgb(0, 0, 0);
+	color: #6D2D6C;
 }
 .form-book label {
 	font-size: 30px;
 }
 .adbook {
 	font-size: 25px;
-	background-color: #D48B9C;
+	background-color: #D292D1;
 	height: 60px;
 	color: rgb(0, 0, 0);
 	text-transform: uppercase;
@@ -46,7 +46,7 @@ a,p,div,h1 {
 }
 
 .adbook:hover {
-	background-color: #D48B9C;
+	background-color: #D292D1;
 	height: 60px;
 	color: rgb(0, 0, 0);
 	text-transform: uppercase;
