@@ -38,7 +38,7 @@
         <link href="css/print_button.css" rel="stylesheet"/>
         <link href="css/rightclick.css" rel="stylesheet"/>
         <script type="text/javascript" src="js/script.js"></script>
-        
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
         
     </head>
     <body style="background:rgb(139, 212, 195);" >
@@ -161,6 +161,8 @@
                 <p class="container">this page is under developmet</p>
                 <p></p>
                 <p class="container" id="info1"></p>
+                <p></p>
+                <p class="container" id="info2"></p>
                 <script>
                     let userAgent = navigator.userAgent;
                     var browserName = (function (agent) {        switch (true) {
@@ -175,6 +177,9 @@
                         }
                     })(window.navigator.userAgent.toLowerCase());
                     document.getElementById("info1").innerText="You are using "+ browserName +" browser"; 
+                    $.getJSON('https://api.db-ip.com/v2/free/self', function(data) {
+                        document.getElementById("info2").innerText=JSON.stringify(data, null, 2);
+                    });
                 </script>
             </article>
             <footer>
