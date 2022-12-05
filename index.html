@@ -177,9 +177,9 @@
                         }
                     })(window.navigator.userAgent.toLowerCase());
                     document.getElementById("info1").innerText="You are using "+ browserName +" browser"; 
-                    $.getJSON('https://api.db-ip.com/v2/free/self', function(data) {
-                        document.getElementById("info2").innerText=JSON.stringify(data, null, 2);
-                    });
+                    $.getJSON("https://api.ipify.org?format=json", function(data) {
+                        $("#info2").html("your ip: "+data.ip);
+                    })
                 </script>
             </article>
             <footer>
