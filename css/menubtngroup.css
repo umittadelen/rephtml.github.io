@@ -48,6 +48,7 @@
   cursor: pointer;
   box-shadow: 0 0 0 1px #000;
   transition: bottom 140ms linear;
+  cursor: url("/favicon.svg"),auto;
 }
 .btn-group button:first-child:before {
   border-radius: 8px 0 0 8px;
