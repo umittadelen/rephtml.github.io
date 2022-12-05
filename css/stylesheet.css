@@ -54,8 +54,9 @@ footer {
     left: 600px;
 }
 
-.rotate {
-  animation: rotation 5s infinite linear;
+#rotate {
+  animation: rotation 1800s infinite linear;
+  border-radius: 50%
 }
 
 @keyframes rotation {
@@ -65,4 +66,9 @@ footer {
   to {
     transform: rotate(360deg);
   }
+}
+
+body{
+  max-width: 100%;
+  overflow-x: hidden;
 }
