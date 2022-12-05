@@ -53,3 +53,16 @@ footer {
     top: 5px;
     left: 600px;
 }
+
+.rotate {
+  animation: rotation 900s infinite linear;
+}
+
+@keyframes rotation {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
