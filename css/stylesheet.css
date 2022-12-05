@@ -55,7 +55,7 @@ footer {
 }
 
 .rotate {
-  animation: rotation 900s infinite linear;
+  animation: rotation 5s infinite linear;
 }
 
 @keyframes rotation {
