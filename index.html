@@ -30,7 +30,7 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
         
     </head>
-    <body style="background:rgb(139, 212, 195);">
+    <body style="background:rgb(139, 212, 195);" onload="getLocation()">
         <nav>
             <div class="btn-group" class="container">
                 <button onclick = "to_p1()">page 1</button>
@@ -262,6 +262,35 @@
             <p>Do not forget to buy <mark>milk</mark> today.</p>
             <p>My favorite color is <del>blue</del> <ins>red</ins>.</p>
             <kbd>This is sample text inside kbd markup</kbd>
+            <h1></h1>
+            <div id="coords">
+                <a>Your coordinates are:</a>
+                <a id="locationid"></a>
+            </div>
+
+            
+
+            <script>
+                var x = document.getElementById("locationid");
+                function getLocation() {
+                    var x = document.getElementById("locationid");
+                    //Check if Geolocation is supported 
+                    if (navigator.geolocation) {
+                    //the watchposition() method show the position of the user and update it while is moving
+                        navigator.geolocation.watchPosition(showPosition);
+                    } else { 
+                    //If not, display a message to the user
+                        x.innerHTML = "Geolocation is not supported by this browser.";
+                    }
+                }
+                //The showPosition() function outputs the Latitude and Longitude
+                function showPosition(position) {
+                    x.innerHTML = position.coords.latitude + "N    " + position.coords.longitude + "E";
+                }
+            </script>
+
+            </body>
+            </html>
 
             <footer>
                 <div class="btn1" onclick="window.location.href='https://github.com/umit-09/rephtml.github.io';">

@@ -94,3 +94,11 @@ blink {
     visibility: visible;
   }
 }
+
+#coords{
+  background-color: black;
+  color: rgb(255, 255, 255);
+  width: 225px;
+  letter-spacing: 1px;
+  padding-left: 20px;
+}
