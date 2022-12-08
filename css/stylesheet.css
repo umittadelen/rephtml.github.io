@@ -70,7 +70,9 @@ footer {
     transform: rotate(360deg);
   }
 }
-
+head{
+  cursor: url("../favicon.svg"),auto;
+}
 body{
   max-width: 100%;
   overflow-x: hidden;
