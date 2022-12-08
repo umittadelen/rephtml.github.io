@@ -78,3 +78,19 @@ body{
   overflow-x: hidden;
   cursor: url("../favicon.svg"),auto;
 }
+
+blink {
+  animation: 2s linear infinite blink_effect;
+}
+
+@keyframes blink_effect {
+  0% {
+    visibility: hidden;
+  }
+  50% {
+    visibility: hidden;
+  }
+  100% {
+    visibility: visible;
+  }
+}
