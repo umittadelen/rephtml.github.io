@@ -25,7 +25,7 @@ a,p,div,h1 {
     -o-user-drag: none;
     user-select: none;
     font-weight: 1.5vw;
-    cursor: url("/favicon.svg"),auto;
+    cursor: url("../favicon.svg"),auto;
     
 }
 
@@ -38,7 +38,7 @@ footer {
 
 #doge {
     margin: 0;
-    cursor: url("/favicon.svg"),auto;
+    cursor: url("../favicon.svg"),auto;
 }
 
 .infinite {
@@ -74,5 +74,5 @@ footer {
 body{
   max-width: 100%;
   overflow-x: hidden;
-  cursor: url("/favicon.svg"),auto;
+  cursor: url("../favicon.svg"),auto;
 }
