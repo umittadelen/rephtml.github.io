@@ -96,9 +96,13 @@ blink {
 }
 
 #coords{
-  background-color: black;
-  color: rgb(255, 255, 255);
-  width: 225px;
+  background-color: rgb(139, 212, 195);
+  color: rgb(0, 0, 0);
+  width: 300px;
+  height: 285px;
   letter-spacing: 1px;
   padding-left: 20px;
+  padding-top: 20px;
+  border-radius: 25px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
 }

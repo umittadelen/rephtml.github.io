@@ -199,28 +199,28 @@
                     <input type="radio" name="radio-choice-2" id="radio-choice-2" tabindex="3" value="choice-2" />
                 </div>
 
-            <div>
-                <label for="select-choice">Select Dropdown Choice:</label>
-                <select name="select-choice" id="select-choice">
-                <option value="Choice 1">Choice 1</option>
-                <option value="Choice 2">Choice 2</option>
-                <option value="Choice 3">Choice 3</option>
-                </select>
-            </div>
+                <div>
+                    <label for="select-choice">Select Dropdown Choice:</label>
+                    <select name="select-choice" id="select-choice">
+                    <option value="Choice 1">Choice 1</option>
+                    <option value="Choice 2">Choice 2</option>
+                    <option value="Choice 3">Choice 3</option>
+                    </select>
+                </div>
 
-            <div>
-                <label for="textarea">Textarea:</label>
-                <textarea cols="40" rows="8" name="textarea" id="textarea"></textarea>
-            </div>
+                <div>
+                    <label for="textarea">Textarea:</label>
+                    <textarea cols="40" rows="8" name="textarea" id="textarea"></textarea>
+                </div>
 
-            <div>
-                <label for="checkbox">Checkbox:</label>
-                <input type="checkbox" name="checkbox" id="checkbox" />
+                <div>
+                    <label for="checkbox">Checkbox:</label>
+                    <input type="checkbox" name="checkbox" id="checkbox" />
                 </div>
 
             <div>
                 <input type="submit" value="Submit" />
-                </div>
+            </div>
             </form>
             <h1></h1>
             <h1></h1>
@@ -262,35 +262,6 @@
             <p>Do not forget to buy <mark>milk</mark> today.</p>
             <p>My favorite color is <del>blue</del> <ins>red</ins>.</p>
             <kbd>This is sample text inside kbd markup</kbd>
-            <h1></h1>
-            <div id="coords">
-                <a>Your coordinates are:</a>
-                <a id="locationid"></a>
-            </div>
-
-            
-
-            <script>
-                var x = document.getElementById("locationid");
-                function getLocation() {
-                    var x = document.getElementById("locationid");
-                    //Check if Geolocation is supported 
-                    if (navigator.geolocation) {
-                    //the watchposition() method show the position of the user and update it while is moving
-                        navigator.geolocation.watchPosition(showPosition);
-                    } else { 
-                    //If not, display a message to the user
-                        x.innerHTML = "Geolocation is not supported by this browser.";
-                    }
-                }
-                //The showPosition() function outputs the Latitude and Longitude
-                function showPosition(position) {
-                    x.innerHTML = position.coords.latitude + "N    " + position.coords.longitude + "E";
-                }
-            </script>
-
-            </body>
-            </html>
 
             <footer>
                 <div class="btn1" onclick="window.location.href='https://github.com/umit-09/rephtml.github.io';">
@@ -303,9 +274,35 @@
             <article>
                 <p class="container">this page is under developmet</p>
                 <p></p>
-                <p class="container" id="info1"></p>
-                <p></p>
-                <p class="container" id="info2"></p>
+                <div class="container" id="coords">
+                    <p class="container" id="info1"></p>
+                    <p></p>
+                    <p class="container" id="info2"></p>
+                    <p></p>
+                    <a >Your Coordinates Are:</a>
+                    <a id="locationid"></a>
+                </div>
+    
+                
+    
+                <script>
+                    var x = document.getElementById("locationid");
+                    function getLocation() {
+                        var x = document.getElementById("locationid");
+                        //Check if Geolocation is supported 
+                        if (navigator.geolocation) {
+                        //the watchposition() method show the position of the user and update it while is moving
+                            navigator.geolocation.watchPosition(showPosition);
+                        } else { 
+                        //If not, display a message to the user
+                            x.innerHTML = "Geolocation is not supported by this browser.";
+                        }
+                    }
+                    //The showPosition() function outputs the Latitude and Longitude
+                    function showPosition(position) {
+                        x.innerHTML = position.coords.latitude + "N    " + position.coords.longitude + "E";
+                    }
+                </script>
                 <script>
                     let userAgent = navigator.userAgent;
                     var browserName = (function (agent) {        switch (true) {
