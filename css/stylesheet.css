@@ -92,6 +92,7 @@ blink {
 }
 
 div.clickEffect{
+  pointer-events: none;
   position:fixed;
   box-sizing:border-box;
   border-style:solid;
