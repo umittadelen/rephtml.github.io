@@ -2,6 +2,15 @@ if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(naviga
     window.alert("This web page may not work properly on your device, but you can still open it.")
 }
 
+function clickEffect(e){
+    var d=document.createElement("div");
+    d.className="clickEffect";
+    d.style.top=e.clientY+"px";d.style.left=e.clientX+"px";
+    document.body.appendChild(d);
+    d.addEventListener('animationend',function(){d.parentElement.removeChild(d);}.bind(this));
+}
+document.addEventListener('click',clickEffect);
+
 function to_p1() {
     document.getElementById("div1").style.display="block";
     document.getElementById("div2").style.display="none";
