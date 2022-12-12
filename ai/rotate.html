@@ -32,3 +32,33 @@
     </script>
 </body>
 </html>
+
+<!--
+
+const canvas = document.querySelector('.canvas');
+const context = canvas.getContext('2d');
+
+// Set up the fluid simulation
+const width = canvas.width;
+const height = canvas.height;
+const fluid = new Fluid(width, height);
+
+window.addEventListener('deviceorientation', function(event) {
+  const x = event.beta;  // In degree in the range [-180,180]
+  const y = event.gamma; // In degree in the range [-90,90]
+
+  // Update the fluid simulation based on the orientation of the phone
+  fluid.update(x, y);
+
+  // Draw the fluid simulation on the canvas
+  fluid.draw(context);
+});
+In the code above, we're using the beta and gamma values from the event object to update the fluid simulation. These values represent the orientation of the phone along the x and y axes, respectively. We're using these values to call the update method of the fluid object, which updates the simulation based on the orientation of the phone.
+
+Once the fluid simulation has been updated, we're using the draw method to render it on the canvas. This will show the fluid moving and flowing based on the orientation of the phone.
+
+To use this code, you'll need to have a <canvas> element in your HTML that the JavaScript code can reference. You'll also need to have a Fluid class
+
+
+
+-->
