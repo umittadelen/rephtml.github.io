@@ -43,7 +43,8 @@
             // Move the ball based on the orientation of the phone
             ball.style.top = `${x}%`;
             ball.style.left = `${y}%`;
-            document.querySelector('.info').innerHTML = ball.style.top;
+            document.querySelector('.info').innerHTML = 'beta:' + ball.style.top;
+            document.querySelector('.info').innerHTML = 'gamma:' + ball.style.left;
         });
 
         function scale (number, inMin, inMax, outMin, outMax) {
