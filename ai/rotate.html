@@ -20,18 +20,14 @@
     <div class="ball"></div>
     <script>
         const ball = document.querySelector('.ball');
-
         window.addEventListener('deviceorientation', function(event) {
-            const x =  scale(event.beta, 0, $(window).height(), -180, 180);  // In degree in the range [-180,180]
-            const y = scale(event.gamma, 0, $(window).height(), -90, 90); // In degree in the range [-90,90]
-
+            const x = event.beta;  // In degree in the range [-180,180]
+            const y = event.gamma; // In degree in the range [-90,90]
+            
             // Move the ball based on the orientation of the phone
             ball.style.top = `${x}vh`;
             ball.style.left = `${y}vw`;
         });
-        function scale (number, inMin, inMax, outMin, outMax) {
-            return (number - inMin) * (outMax - outMin) / (inMax - inMin) + outMin;
-        }
     </script>
 </body>
 </html>
