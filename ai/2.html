@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    /* Add animation to the button */
+    .button {
+      animation: pulse 5s infinite;
+    }
+
+    /* Animation code */
+    @keyframes pulse {
+      0% {
+        transform: scale(1);
+        box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.7);
+      }
+      70% {
+        transform: scale(1.15);
+        box-shadow: 0 0 0 10px rgba(255, 255, 255, 0);
+      }
+      100% {
+        transform: scale(1);
+        box-shadow: 0 0 0 0 rgba(255, 255, 255, 0);
+      }
+    }
+  </style>
+</head>
+<body>
+  <button class="button">Click me!</button>
+</body>
+</html>
+This code will create a button with a pulse animation that makes the button grow slightly, then shrink back to its original size, with a white box-shadow that appears and disappears around the button. You can customize the animation by changing the @keyframes rule to specify different
+
+
