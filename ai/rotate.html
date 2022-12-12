@@ -22,12 +22,12 @@
         const ball = document.querySelector('.ball');
 
         window.addEventListener('deviceorientation', function(event) {
-        const x = event.beta;  // In degree in the range [-180,180]
-        const y = event.gamma; // In degree in the range [-90,90]
+            const x = event.beta;  // In degree in the range [-180,180]
+            const y = event.gamma; // In degree in the range [-90,90]
 
-        // Move the ball based on the orientation of the phone
-        ball.style.top = `${y}px`;
-        ball.style.left = `${x}px`;
+            // Move the ball based on the orientation of the phone
+            ball.style.top = `${x}vh`;
+            ball.style.left = `${y}vw`;
         });
     </script>
 </body>
