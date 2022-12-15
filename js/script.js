@@ -2,6 +2,21 @@ if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(naviga
     window.alert("This web page may not work properly on your device, but you can still open it.")
 }
 
+// Get a reference to the footer element
+var footer = document.getElementById("footer");
+
+// Calculate the height of the footer and its contents
+var footerHeight = footer.offsetHeight;
+
+function changeBackgroundColor() {
+    var color = document.getElementById("color-picker").value;
+    document.body.style.backgroundColor = color;
+  }
+
+  function resetBackgroundColor() {
+    document.body.style.backgroundColor = "#8bd4c3";
+  }
+
 function clickEffect(e){
     var d=document.createElement("div");
     d.className="clickEffect";

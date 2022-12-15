@@ -13,6 +13,10 @@
         font-weight:500;
         font-style: normal;
     }
+    #color-picker {
+      width: 40px;
+      height: 40px;
+    }
 </style>
 
 <html>
@@ -31,7 +35,7 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
         
     </head>
-    <body style="background:rgb(139, 212, 195);" onload="getLocation()">
+    <body style="background:#8bd4c3;" onload="getLocation()">
         <nav>
             <div class="btn-group" class="container">
                 <button onclick = "to_p1()">page 1</button>
@@ -40,6 +44,8 @@
                 <button onclick = "to_p4()">page 4</button>
                 <button onclick = "to_p5()">page 5</button>
             </div>
+            <input type="color" id="color-picker" onchange="changeBackgroundColor()">
+            <button onclick="resetBackgroundColor()" id="reset">Reset</button>
         </nav>
         
             
@@ -48,11 +54,11 @@
                 <h1 class="container">page 1</h1>
                 <p class="container">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus voluptates sit, beatae vel est facilis, optio dolor molestias nam repellendus praesentium reprehenderit deserunt molestiae, eveniet ratione alias nesciunt ut eius.</p>
             </article>
-            <footer>
+            <div id="footer">
                 <div class="btn1" onclick="window.location.href='https://minecraft.net';">
                     <a><span>minecraft.net</span></a>
                 </div>
-            </footer>
+            </div>
         </div>
             
         <div id = "div2" style="display:none">
@@ -277,11 +283,11 @@
             <p>My favorite color is <del>blue</del> <ins>red</ins>.</p>
             <kbd>This is sample text inside kbd markup</kbd>
 
-            <footer>
+            <div id="footer">
                 <div class="btn1" onclick="window.location.href='https://github.com/umit-09/rephtml.github.io';">
                     <a><span>project page</span></a>
                 </div>
-            </footer>
+            </div>
         </div>
 
         <div id = "div5" style="display:none">
@@ -335,7 +341,7 @@
                     });
                 </script>
             </article>
-            <footer>
+            <div id="footer">
                 <div class="btn1" onclick="window.location.href='html/rr.html';">
                     <a><span>main page</span></a>
                 </div>
@@ -345,7 +351,7 @@
                 <div class="btn1" onclick="window.location.href='html/video.html';">
                     <a><span>video</span></a>
                 </div>
-            </footer>
+            </div>
         </div>
 
         <div id="context-menu">
