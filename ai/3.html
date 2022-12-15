@@ -1,0 +1,70 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #canvas {
+            position: sticky;
+            top: 50%;
+            left: 50%;
+            width: 40px;
+            height: 40px;
+            background-image: url("../favicon.png");
+            background-repeat: no-repeat;
+            background-size: contain;
+            border-radius: 100%;
+            border-color: white;
+            border-style: solid;
+        }
+    </style>
+</head>
+<body style="background-color: rgb(0, 0, 0);">
+    <div id="canvas"></div>
+    <script>
+        // Set up the canvas
+const canvas = document.getElementById('canvas');
+
+// Set up the ball
+const ballRadius = 10;
+let ballX = canvas.width / 2;
+let ballY = canvas.height - 30;
+let ballDX = 2;
+let ballDY = -2;
+
+// Set up the accelerometer
+window.addEventListener('devicemotion', (event) => {
+  // Update the ball's velocity based on the accelerometer data
+  ballDX = event.accelerationIncludingGravity.x;
+  ballDY = event.accelerationIncludingGravity.y;
+});
+
+// Update the ball's position based on its velocity
+function draw() {
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+  ctx.beginPath();
+  ctx.arc(ballX, ballY, ballRadius, 0, Math.PI * 2);
+  ctx.fillStyle = '#0095DD';
+  ctx.fill();
+  ctx.closePath();
+
+  ballX += ballDX;
+  ballY += ballDY;
+
+  // Bounce the ball off the walls
+  if (ballX + ballDX > canvas.width - ballRadius || ballX + ballDX < ballRadius) {
+    ballDX = -ballDX;
+  }
+  if (ballY + ballDY > canvas.height - ballRadius || ballY + ballDY < ballRadius) {
+    ballDY = -ballDY;
+  }
+
+  requestAnimationFrame(draw);
+}
+
+draw();
+    </script>
+</body>
+</html>
