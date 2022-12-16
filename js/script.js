@@ -13,6 +13,7 @@ function changeBackgroundColor() {
     document.body.style.backgroundColor = color;
     document.getElementById("color-picker").style.backgroundColor = complementryHexColor(color);
     document.getElementById("reset").style.backgroundColor = complementryHexColor(color);
+    document.getElementById("coords").style.backgroundColor = color;
 }
 
 function complementryHexColor(hex){
@@ -71,6 +72,7 @@ function resetBackgroundColor() {
     document.body.style.backgroundColor = color;
     document.getElementById("color-picker").style.backgroundColor = complementryHexColor(color);
     document.getElementById("reset").style.backgroundColor = complementryHexColor(color);
+    document.getElementById("coords").style.backgroundColor = color;
 }
 
 function clickEffect(e){
