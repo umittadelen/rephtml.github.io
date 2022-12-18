@@ -2,10 +2,12 @@ if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(naviga
     window.alert("This web page may not work properly on your device, but you can still open it.")
 }
 
-// Get a reference to the footer element
+window.addEventListener('load', (event) =>{
+    resetBackgroundColor();
+});
+
 var footer = document.getElementById("footer");
 
-// Calculate the height of the footer and its contents
 var footerHeight = footer.offsetHeight;
 
 function changeBackgroundColor() {
@@ -14,6 +16,43 @@ function changeBackgroundColor() {
     document.getElementById("color-picker").style.backgroundColor = complementryHexColor(color);
     document.getElementById("reset").style.backgroundColor = complementryHexColor(color);
     document.getElementById("coords").style.backgroundColor = color;
+    var buttons = document.querySelectorAll('.btn1');
+    changetextcolor()
+    // Loop over the buttons and set the custom property for each one
+    for (var i = 0; i < buttons.length; i++) {
+        buttons[i].style.setProperty('--after-bg', complementryHexColor(color));
+    }
+    
+}
+
+function resetBackgroundColor() {
+    color = "#8bd4c3";
+    document.body.style.backgroundColor = color;
+    document.getElementById("color-picker").value = "#8bd4c3";
+    var color = document.getElementById("color-picker").value;
+    document.getElementById("color-picker").style.backgroundColor = complementryHexColor(color);
+    document.getElementById("reset").style.backgroundColor = complementryHexColor(color);
+    document.getElementById("coords").style.backgroundColor = color;
+    var buttons = document.querySelectorAll('.btn1');
+    changetextcolor()
+    // Loop over the buttons and set the custom property for each one
+    for (var i = 0; i < buttons.length; i++) {
+        buttons[i].style.setProperty('--after-bg', complementryHexColor(color));
+    }
+    
+}
+
+function changetextcolor(){
+    const bgColor = document.body.style.backgroundColor
+    const rgbColor = bgColor.match(/\d+/g);
+    const luminance = 0.2126 * rgbColor[0] + 0.7152 * rgbColor[1] + 0.0722 * rgbColor[2];
+    if (luminance >= 128) {
+        document.body.style.color = '#000';
+        document.getElementById('coords').style.color = '#000';
+    } else {
+        document.body.style.color = '#fff';
+        document.getElementById('coords').style.color = '#fff';
+    }
 }
 
 function complementryHexColor(hex){
@@ -63,16 +102,6 @@ function complementryRGBColor(r, g, b) {
 
         return [Math.round(r*255), Math.round(g*255), Math.round(b*255)];
     }
-}
-
-function resetBackgroundColor() {
-    document.body.style.backgroundColor = "#8bd4c3";
-    document.getElementById("color-picker").value = "#8bd4c3";
-    var color = document.getElementById("color-picker").value;
-    document.body.style.backgroundColor = color;
-    document.getElementById("color-picker").style.backgroundColor = complementryHexColor(color);
-    document.getElementById("reset").style.backgroundColor = complementryHexColor(color);
-    document.getElementById("coords").style.backgroundColor = color;
 }
 
 function clickEffect(e){
