@@ -49,9 +49,11 @@ function changetextcolor(){
     if (luminance >= 128) {
         document.body.style.color = '#000';
         document.getElementById('coords').style.color = '#000';
+        document.getElementById('reset').style.color = '#000';
     } else {
         document.body.style.color = '#fff';
         document.getElementById('coords').style.color = '#fff';
+        document.getElementById('reset').style.color = '#fff';
     }
 }
 
