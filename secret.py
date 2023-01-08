@@ -9,12 +9,7 @@ except:
   raise Exception("type 'pip install math' for download math plugin")
 
 def checkBIN(string):
-  p = set(string)
-  s = {'0', '1'}
-  if s == p or p == {'0'} or p == {'1'}:
-      return True
-  else:
-      return False
+  return all(c == '0' or c == '1' for c in string)
 
 def message_to_image(message):
   if checkBIN(message) == True:
