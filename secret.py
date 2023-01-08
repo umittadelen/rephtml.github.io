@@ -1,12 +1,16 @@
+import os,math,importlib.util
+
 try:
   from PIL import Image
 except:
-  raise Exception("type 'pip install pillow' for download PIL plugin")
+  err = [1,"pillow"]
+else:
+  err = [0,""]
 
-try:
-  import os,math
-except:
-  raise Exception("type 'pip install math' for download math plugin")
+if err[0] == 1:
+  if importlib.util.find_spec("pip") is None:
+    os.system("py -m ensurepip --upgrade")
+  os.system(f"pip install {err[1]}")
 
 def checkBIN(string):
   return all(c == '0' or c == '1' for c in string)
@@ -49,38 +53,44 @@ def message_to_image(message):
 
 def image_to_message(image_file):
   # Open the image
-  image = Image.open(image_file)
-  dots = list(image.getdata())
-  readded_bin_list = []
-  temp = ""
-  result = []
-  text_result = []
-  output = ""
-  for i in dots:
-    if i == (0, 0, 0):
-      readded_bin_list.append(1)
-    if i == (255, 255, 255):
-      readded_bin_list.append(0)
-    if i == (255, 0, 0):
-      readded_bin_list.append(" ")
-  for x in readded_bin_list:
-      if x == " ":
-          result.append(temp)
-          temp = ""
-      else:
-        temp += str(x)
-  result.append(temp)
-  del result[-1]
-  text_result = [chr(int(s, 2)) for s in result]
-  output = ''.join(text_result)
-  return output
-
+  try:
+    image = Image.open(image_file)
+    dots = list(image.getdata())
+    readded_bin_list = []
+    temp = ""
+    result = []
+    text_result = []
+    output = ""
+    for i in dots:
+      if i == (0, 0, 0):
+        readded_bin_list.append(1)
+      if i == (255, 255, 255):
+        readded_bin_list.append(0)
+      if i == (255, 0, 0):
+        readded_bin_list.append(" ")
+    for x in readded_bin_list:
+        if x == " ":
+            result.append(temp)
+            temp = ""
+        else:
+          temp += str(x)
+    result.append(temp)
+    del result[-1]
+    text_result = [chr(int(s, 2)) for s in result]
+    output = ''.join(text_result)
+    return output
+    
+  except:
+    print("image not found")
+    return ""
+  
 loop = 1
 while True:
   # Test the encoder
   os.system("cls")
   answer = input("\033[1m \033[1;31;40mencode, decode or exit > \033[0;0m\033[1;34;40m")
   print("\033[0;0m")
+
   if answer == "encode":
     message = input("\033[1m \033[1;33;40menter text> \033[0;0m\033[1;36;40m")
     print("\033[0;0m")
@@ -92,7 +102,7 @@ while True:
     print(image_to_message(f'C:/Users/{os.getlogin( )}/Desktop/binary_image.png') + "\n")
 
   elif answer == "exit":
-    os.system("exit")
+    os._exit(0)
 
   else:
     print("\033[1m \033[1;32;40myou can enter (encode, decode, exit)\033[0;0m\n")
