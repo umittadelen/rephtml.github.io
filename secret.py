@@ -1,3 +1,5 @@
+# ↓↓ IMPORTING PACKAGES AND CHECKING PIP AND PIL PACKAGE ↓↓
+
 import os,math,importlib.util
 
 try:
@@ -11,6 +13,8 @@ if err[0] == 1:
   if importlib.util.find_spec("pip") is None:
     os.system("py -m ensurepip --upgrade")
   os.system(f"pip install {err[1]}")
+
+# ↓↓ MAIN CODE ↓↓ #
 
 def checkBIN(string):
   return all(c == '0' or c == '1' for c in string)
