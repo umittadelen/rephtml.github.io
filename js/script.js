@@ -22,7 +22,11 @@ function changeBackgroundColor() {
     for (var i = 0; i < buttons.length; i++) {
         buttons[i].style.setProperty('--after-bg', complementryHexColor(color));
     }
-    
+    // Loop over the buttons and set the custom property for each one
+    var boxes = document.querySelectorAll('.box');
+    for (var i = 0; i < boxes.length; i++) {
+        boxes[i].style.backgroundColor = complementryHexColor(color);
+    }
 }
 
 function resetBackgroundColor() {
@@ -39,7 +43,10 @@ function resetBackgroundColor() {
     for (var i = 0; i < buttons.length; i++) {
         buttons[i].style.setProperty('--after-bg', complementryHexColor(color));
     }
-    
+    var boxes = document.querySelectorAll('.box');
+    for (var i = 0; i < boxes.length; i++) {
+        boxes[i].style.backgroundColor = complementryHexColor(color);
+    }
 }
 
 function changetextcolor(){

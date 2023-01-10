@@ -15,8 +15,21 @@
         transition: all 1s;
     }
     #color-picker {
-      width: 40px;
-      height: 40px;
+        width: 40px;
+        height: 40px;
+    }
+    .box {
+        width: 100px;
+        height: 100px;
+        background-color: rgb(0, 0, 0);
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        border: dotted;
+        border-radius: 5px;
+    }
+    .box:hover {
+        border: solid;
     }
 </style>
 
@@ -359,8 +372,12 @@
         </div>
 
         <div id = "div6" style="display:none">
-            <article>
-            </article>
+            <div class="box" id="box1"></div>
+            <div class="box" id="box2"></div>
+            <div class="box" id="box3"></div>
+            <div class="box" id="box4"></div>
+            <div class="box" id="box5"></div>
+            <script type="text/javascript" src="js/movingboxes.js"></script>
         </div>
 
         <div id="context-menu">
