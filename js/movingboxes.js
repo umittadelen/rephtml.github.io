@@ -34,7 +34,7 @@ var currentY;
 var initialX;
 var initialY;
 var boxes = [box1,box2,box3,box4,box5];
-var maxZ = 100;
+var maxZ = 4;
 var minZ = 0;
 
 function startDrag(e) {
