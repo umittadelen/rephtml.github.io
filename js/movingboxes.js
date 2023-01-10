@@ -66,7 +66,4 @@ function drag(e) {
 
 function endDrag(e) {
   active = null;
-  boxes.forEach(function(box) {
-    box.style.opacity = '1';
-  });
 }
