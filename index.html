@@ -35,6 +35,7 @@
 
 <html>
     <head>
+        <script src="https://www.google.com/recaptcha/enterprise.js?render=6LePZ-sjAAAAAC4gg7vmlk1487aOlrk-3QrRuO_9"></script>
         <script src="https://kit.fontawesome.com/26a2eb1317.js" crossorigin="anonymous"></script>
         <title>test page</title>
         <link rel="icon" href="favicon.ico" type="image/x-icon">
@@ -46,10 +47,15 @@
         <link href="css/print_button.css" rel="stylesheet"/>
         <link href="css/rightclick.css" rel="stylesheet"/>
         <script type="text/javascript" src="js/script.js"></script>
+        <script type="text/javascript" src="js/recaptcha.js"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
         
     </head>
-    <body style="background:#8bd4c3;" onload="getLocation()">
+    <body id="botcheck" style="background:#000000; display:block;">
+        <div class="g-recaptcha" data-sitekey="your_site_key"></div>
+    </body>
+    
+    <body id="website" type="hidden" style="background:#8bd4c3; display:none;" onload="getLocation()">
         <nav>
             <div class="btn-group" class="container">
                 <button onclick = "to_p1()">page 1</button>
