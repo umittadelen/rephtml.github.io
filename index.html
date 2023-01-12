@@ -1,20 +1,135 @@
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>recaptcha</title>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <style>
+            .image-grid {
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+                grid-gap: 1px;
+            }
 
-    <script src="https://www.google.com/recaptcha/enterprise.js?render=6LePZ-sjAAAAAC4gg7vmlk1487aOlrk-3QrRuO_9"></script>
-    <script type="text/javascript" src="js/recaptcha.js"></script>
-</head>
-<body>
-    <script>
-        grecaptcha.enterprise.ready(function() {
-            grecaptcha.enterprise.execute('6LePZ-sjAAAAAC4gg7vmlk1487aOlrk-3QrRuO_9', {action: 'login'}).then(function(token) {
-               console.log("you are human");
-               //window.location.href = "main.html";
+            .image-container {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                width: min-content;
+                height: min-content;
+                border: solid;
+                border-color: red;
+                border-width: 2px;
+            }
+            .all {
+                width: min-content;
+                height: min-content;
+            }
+            input.image-select{
+                height: 80px;
+            }
+            #submit-button{
+                background-color: red;
+                border-radius: 10px;
+                margin: 10px 50% 10px 0px;
+                padding: 10px 140px 10px 140px;
+                font-family: 'comic sans ms';
+                font-weight: bold;
+                font-size: 0.8em;
+                box-shadow: inset 0px 0px 10px 6px #000000;
+                transition: all 1s;
+            }
+            #submit-button:hover{
+                box-shadow: inset 0px 0px 5px 1px #000000;
+                transition: all 1s;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="all">
+            <div class="image-grid">
+                <div class="image-container">
+                    <input type="checkbox" class="image-select" id="image1">
+                    <label for="image1"></label>
+                    <img src="/images/3x3/image1.png" alt="image1">
+                </div>
+                <div class="image-container">
+                    <input type="checkbox" class="image-select" id="image2">
+                    <label for="image2"></label>
+                    <img src="/images/3x3/image2.png" alt="image2">
+                </div>
+                <div class="image-container">
+                    <input type="checkbox" class="image-select" id="image3">
+                    <label for="image3"></label>
+                    <img src="/images/3x3/image3.png" alt="image3">
+                </div>
+                <div class="image-container">
+                    <input type="checkbox" class="image-select" id="image4">
+                    <label for="image4"></label>
+                    <img src="/images/3x3/image4.png" alt="image4">
+                </div>
+                <div class="image-container">
+                    <input type="checkbox" class="image-select" id="image5">
+                    <label for="image5"></label>
+                    <img src="/images/3x3/image5.png" alt="image5">
+                </div>
+                <div class="image-container">
+                    <input type="checkbox" class="image-select" id="image6">
+                    <label for="image6"></label>
+                    <img src="/images/3x3/image6.png" alt="image6">
+                </div>
+                <div class="image-container">
+                    <input type="checkbox" class="image-select" id="image7">
+                    <label for="image7"></label>
+                    <img src="/images/3x3/image7.png" alt="image7">
+                </div>
+                <div class="image-container">
+                    <input type="checkbox" class="image-select" id="image8">
+                    <label for="image8"></label>
+                    <img src="/images/3x3/image8.png" alt="image8">
+                </div>
+                <div class="image-container">
+                    <input type="checkbox" class="image-select" id="image9">
+                    <label for="image9"></label>
+                    <img src="/images/3x3/image9.png" alt="image9">
+                </div>
+            </div>
+            <div class="submit-button-container">
+                <button type="submit" id="submit-button">Submit</button>
+            </div>
+        </div>
+        
+        <script>
+            // Get all the checkboxes in the grid
+            let checkboxes = document.querySelectorAll('.image-select');
+            // Create an empty array to store the selected images
+            let selectedImages = [];
+        
+            // Add event listener to the submit button
+            document.querySelector('#submit-button').addEventListener('click', function() {
+                // Loop through all the checkboxes and check if they are selected
+                checkboxes.forEach(function(checkbox) {
+                    if (checkbox.checked) {
+                    // If the checkbox is checked, get the corresponding image src
+                    let image = checkbox.parentElement.querySelector('img');
+                    selectedImages.push(image.src);
+                    }
+                });
+        
+                if (selectedImages.length === 9) {
+                    //if the number of selected images is 9 redirect to the index.html page
+                    window.location.href = 'main.html';
+                    // Reset the selectedImages array
+                    selectedImages = [];
+                } else {
+                    //if the number of selected images is not 9, display an error message
+                    alert("Please select 9 images");
+                    checkboxes.forEach(function(checkbox) {
+                        checkbox.checked = false;
+                    });
+                    selectedImages = [];
+                }
             });
-        });
-    </script>
-    <div class="g-recaptcha" data-sitekey="6LePZ-sjAAAAAC4gg7vmlk1487aOlrk-3QrRuO_9"></div>
-</body>
+        </script>    
+    </body>
 </html>
