@@ -104,29 +104,21 @@
         </div>
         
         <script>
-            // Get all the checkboxes in the grid
             let checkboxes = document.querySelectorAll('.image-select');
-            // Create an empty array to store the selected images
             let selectedImages = [];
         
-            // Add event listener to the submit button
             document.querySelector('#submit-button').addEventListener('click', function() {
-                // Loop through all the checkboxes and check if they are selected
                 checkboxes.forEach(function(checkbox) {
                     if (checkbox.checked) {
-                    // If the checkbox is checked, get the corresponding image src
                     let image = checkbox.parentElement.querySelector('img');
                     selectedImages.push(image.src);
                     }
                 });
         
                 if (selectedImages.length === 9) {
-                    //if the number of selected images is 9 redirect to the index.html page
                     window.location.href = 'main.html';
-                    // Reset the selectedImages array
                     selectedImages = [];
                 } else {
-                    //if the number of selected images is not 9, display an error message
                     alert("Please select 9 images");
                     checkboxes.forEach(function(checkbox) {
                         checkbox.checked = false;
