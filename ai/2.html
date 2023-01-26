@@ -1,39 +1,66 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <style>
-    body {
-      background-color: #ffffff;
-    }
-
-    button {
-      padding: 10px;
-      font-size: 16px;
-      cursor: pointer;
-    }
-
-    #color-picker {
-      width: 40px;
-      height: 40px;
-    }
-  </style>
-</head>
-<body>
-  <h1>Change Background Color</h1>
-  <p>Select a color:</p>
-
-  <input type="color" id="color-picker" onchange="changeBackgroundColor()">
-  <button onclick="resetBackgroundColor()">Reset</button>
-
+  <html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+  </head>
+  <body>
+    <form id="myForm">
+      <label for="name">Ad:</label>
+      <input type="text" id="name" name="name"><br>
+      <label for="surname">Soyad:</label>
+      <input type="text" id="surname" name="surname"><br>
+      <label for="email">E-posta:</label>
+      <input type="email" id="email" name="email"><br>
+      <label for="message">Mesaj:</label>
+      <textarea id="message" name="message"></textarea><br>
+      <input type="button" value="Gönder" onclick="submitForm()">
+    </form>   
+    <p id="dataContainer"></p>
+  </body>
   <script>
-    function changeBackgroundColor() {
-      var color = document.getElementById("color-picker").value;
-      document.body.style.backgroundColor = color;
-    }
+    var formData;
+function submitForm() {
+    formData = {
+        name: document.getElementById("name").value,
+        surname: document.getElementById("surname").value,
+        email: document.getElementById("email").value,
+        message: document.getElementById("message").value
+    };
+    fetch("data.json", {
+        method: "POST",
+        body: JSON.stringify(formData),
+        headers: {
+            "Content-Type": "application/json"
+        }
+    })
+    .then(response => response.json())
+    .then(data => {
+        console.log("Veriler kaydedildi: ", data);
+        readData();
+    })
+    .catch(error => {
+        console.error("Veriler kaydedilirken hata oluştu: ", error);
+    });
+}
 
-    function resetBackgroundColor() {
-      document.body.style.backgroundColor = "#ffffff";
-    }
+function readData() {
+    fetch("data.json")
+    .then(response => response.json())
+    .then(data => {
+        var dataContainer = document.getElementById("dataContainer");
+        var dataContent = "";
+        dataContent += "Ad: " + formData.name + "<br>" +
+        "Soyad: " + formData.surname + "<br>" +
+        "E-posta: " + formData.email + "<br>" +
+        "Mesaj: " + formData.message + "<br><br>";
+        dataContainer.innerHTML = dataContent;
+    })
+    .catch(error => {
+        console.error("Veriler okunurken hata oluştu: ", error);
+    });
+}
+
   </script>
-</body>
 </html>
