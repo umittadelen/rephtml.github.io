@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>SSH Directory Listing</title>
+</head>
+<body>
+    <div id="output"></div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ssh2/1.3.0/ssh2.min.js"></script>
+    <script>
+        const conn = new window.ssh2.Client();
+        const outputDiv = document.getElementById('output');
+        outputDiv.innerHTML += '<p>Connecting...</p>';
+
+        conn.on('ready', function() {
+            outputDiv.innerHTML += '<p>Connected to SSH server.</p>';
+
+            conn.exec('ls -l', function(err, stream) {
+                if (err) {
+                    outputDiv.innerHTML += `<p>Error: ${err}</p>`;
+                    conn.end();
+                    return;
+                }
+
+                stream.on('close', function(code, signal) {
+                    conn.end();
+                    outputDiv.innerHTML += '<p>Disconnected from SSH server.</p>';
+                }).on('data', function(data) {
+                    outputDiv.innerHTML += `<p>${data.toString()}</p>`;
+                });
+            });
+        }).on('error', function(err) {
+            outputDiv.innerHTML += `<p>Error: ${err}</p>`;
+        }).connect({
+            host: '84.211.187.101',
+            port: 22,
+            username: 'umittadelen',
+            password: 'tasdelen'
+        });
+    </script>
+</body>
+</html>
